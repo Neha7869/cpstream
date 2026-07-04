@@ -28,6 +28,7 @@ export default async function CreatorPage({
         user={user}
         stream={user.stream}
         isFollowing={true}
+        isBlocked={false}
       />
     </div>
   );
