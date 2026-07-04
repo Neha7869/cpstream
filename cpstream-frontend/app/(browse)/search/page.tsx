@@ -3,6 +3,9 @@ import { redirect } from "next/navigation";
 
 import { Results, ResultsSkeleton } from "./_components/results";
 
+// Forces Next.js to treat this route as completely dynamic on demand
+export const dynamic = "force-dynamic";
+
 export default function SearchPage({
   searchParams,
 }: {
