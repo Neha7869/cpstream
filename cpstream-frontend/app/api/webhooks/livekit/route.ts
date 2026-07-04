@@ -19,7 +19,8 @@ export async function POST(req: Request) {
     });
   }
 
-  const event = receiver.receive(body, authorization);
+  // Added await here because receiver.receive returns a Promise in the updated SDK
+  const event = await receiver.receive(body, authorization);
 
   if (event.event === "ingress_started") {
     await db.stream.update({
