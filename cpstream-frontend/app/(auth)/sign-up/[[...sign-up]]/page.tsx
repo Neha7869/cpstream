@@ -7,7 +7,7 @@ export default function Page() {
     <div className="w-full flex justify-center">
       <SignUp
         signInUrl="/sign-in"
-        forceRedirectUrl="/"
+        afterSignUpUrl="/"
         routing="path"
         appearance={{
           elements: {
