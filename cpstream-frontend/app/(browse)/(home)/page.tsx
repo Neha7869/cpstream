@@ -3,6 +3,8 @@ import { Metadata } from "next";
 
 import { Results, ResultsSkeleton } from "./_components/results";
 
+export const dynamic = "force-dynamic"; // Forces Next.js to bypass static pre-rendering
+
 export const metadata: Metadata = {
   title: "Home",
 };
