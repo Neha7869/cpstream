@@ -1,0 +1,14 @@
+# Ignore ngrok
+ngrok.exe
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Ignore build folders globally
+**/node_modules/
+**/.next/
+**/target/
