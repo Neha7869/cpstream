@@ -6,15 +6,18 @@ export default authMiddleware({
     "/",
     "/search",
     "/api/webhooks/clerk",
+    "/api/webhooks/livekit",
+    "/api/uploadthing",
     "/:username" // Allows public stream profiles to be viewed without a crash
   ],
 });
 
 export const config = {
-  // Intercepts all pages and API requests while ignoring static assets and image files
   matcher: [
-    "/((?!_next/static|_next/image|favicon.ico|.+_next|.*\\..*$).*)",
-    "/",
-    "/(api|trpc)(.*)"
+    // Skip Next.js internals and all static files, unless found in search params
+    "/((?!_next|[^?]*\\.(?:html?|css|js(?!on)|jpe?g|webp|png|gif|svg|ttf|woff2?|ico|csv|docx?|xlsx?|zip|webmanifest)).*)",
+    // Always run for API routes
+    "/(api|trpc)(.*)",
   ],
+  runtime: "nodejs",
 };
